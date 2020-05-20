@@ -51,8 +51,8 @@ public class Round{
         System.out.println("Player  B chooses: " + bMove);
         String aMove = getAMove();
         System.out.println("Player  A chooses: " + aMove);
-        String outcome = getWinner(aMove, bMove);
-        return outcome;
+        String result= getWinner(aMove, bMove);
+        return result;
     }
 
     public String getWinner(String aMove, String bMove) {
@@ -60,35 +60,35 @@ public class Round{
             case RPS.ROCK:
                 switch (bMove) {
                     case RPS.ROCK:
-                        return recordRound(Outcome.TIE);
+                        return recordRound(Result.TIE);
                     case RPS.PAPER:
-                        return recordRound(Outcome.B_WIN);
+                        return recordRound(Result.B_WIN);
                     case RPS.SCISSORS:
-                        return recordRound(Outcome.A_WIN);
+                        return recordRound(Result.A_WIN);
                 }
             case RPS.PAPER:
                 switch (bMove) {
                     case RPS.ROCK:
-                        return recordRound(Outcome.A_WIN);
+                        return recordRound(Result.A_WIN);
                     case RPS.PAPER:
-                        return recordRound(Outcome.TIE);
+                        return recordRound(Result.TIE);
                     case RPS.SCISSORS:
-                        return recordRound(Outcome.B_WIN);
+                        return recordRound(Result.B_WIN);
                 }
             case RPS.SCISSORS:
                 switch (bMove) {
                     case RPS.ROCK:
-                        return recordRound(Outcome.B_WIN);
+                        return recordRound(Result.B_WIN);
                     case RPS.PAPER:
-                        return recordRound(Outcome.A_WIN);
+                        return recordRound(Result.A_WIN);
                     case RPS.SCISSORS:
-                        return recordRound(Outcome.TIE);
+                        return recordRound(Result.TIE);
                 }
         }
         return null;
     }
 
-    private String recordRound(Outcome aWin) {
+    private String recordRound(Result aWin) {
         this.totalGames++;
         switch (aWin) {
             case B_WIN:
