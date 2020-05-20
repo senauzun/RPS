@@ -12,7 +12,7 @@ class RPS{
 
 }
 
-public class Game {
+public class Round{
 
     private int totalGames;
     private int aWins; // a her zaman paper
@@ -20,7 +20,6 @@ public class Game {
     private int ties;
 
     private Random rand = new Random();
-//
 
     public String getBMove(){
         switch (rand.nextInt(3)){
